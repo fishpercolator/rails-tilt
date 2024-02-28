@@ -27,7 +27,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  rackup (~> 2.1)
+  rackup
   sinatra
 
 BUNDLED WITH
