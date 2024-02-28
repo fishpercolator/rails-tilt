@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rails-tilt
+  labels:
+    app: rails-tilt
+spec:
+  selector:
+    matchLabels:
+      app: rails-tilt
+  template:
+    metadata:
+      labels:
+        app: rails-tilt
+    spec:
+      containers:
+        - name: rails-tilt
+          image: rails-tilt
+          ports:
+            - containerPort: 8080
