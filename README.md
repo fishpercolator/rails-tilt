@@ -21,16 +21,21 @@ export PATH="$HOME/go/bin:$PATH"
 
 I added [kind-with-registry.sh](scripts/kind-with-registry.sh) to my `~/.local/bin` and ran it.
 
-You'll also need to mark the registry as insecure, with `/etc/containers/registries.conf.d/kind.conf`:
+You'll also need to mark the registry as insecure, with this in `~/.config/containers/registries.conf`:
 
 ```toml
 [[registry]]
-prefix = "localhost:5001"
 location = "localhost:5001"
 insecure = true
 ```
 
-## 3. Install Tilt
+## 3. Install Helm
+
+```
+host$ install <(curl https://get.helm.sh/helm-$(curl https://get.helm.sh/helm-latest-version)-linux-amd64.tar.gz | tar -xOzf - linux-amd64/helm) ~/.local/bin/helm
+```
+
+## 4. Install Tilt
 
 This script just copies the latest stable binary to `~/.local/bin` so you can do that instead if you prefer.
 
@@ -38,7 +43,7 @@ This script just copies the latest stable binary to `~/.local/bin` so you can do
 host$ curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | bash
 ```
 
-## 4. Hopefully! It works from here
+## 5. Hopefully! It works from here
 
 ```
 host$ tilt up
