@@ -25,5 +25,5 @@ k8s_yaml('app.yaml')
 k8s_resource('rails-tilt', 
     labels=['app'],
     resource_deps=['postgresql'],
-    port_forwards=8080
+    port_forwards='3000:3000'
 )
