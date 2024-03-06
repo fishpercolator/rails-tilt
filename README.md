@@ -1,6 +1,6 @@
 # Example Rails application with Tilt on Silverblue
 
-Currently this just runs a basic Sinatra app, but it's a work in progress!
+Runs a very basic Rails app with Postgres on Tilt.
 
 # Additional setup steps:
 
@@ -48,3 +48,4 @@ host$ curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/
 ```
 host$ tilt up
 ```
+
