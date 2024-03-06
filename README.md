@@ -4,7 +4,17 @@ Runs a very basic Rails app with Postgres on Tilt.
 
 # Additional setup steps:
 
-## 1. Install Kind
+## 0. Ensure your Silverblue is up to date
+
+The default installation of Silverblue 39 has a bug that breaks the Kind installation. Updating to the latest version will resolve this.
+
+## 1. Install Kubectl
+
+```
+host$ install <(curl -L "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl") ~/.local/bin/kubectl
+```
+
+## 2. Install Kind
 
 ```
 toolbox$ sudo dnf install golang
@@ -17,11 +27,11 @@ Ensure go is in the path with a `~/.bashrc.d/go.sh`:
 export PATH="$HOME/go/bin:$PATH"
 ```
 
-## 2. Start Kind with a local registry
+## 3. Start Kind with a local registry
 
 I added [kind-with-registry.sh](scripts/kind-with-registry.sh) to my `~/.local/bin` and ran it.
 
-You'll also need to mark the registry as insecure, with this in `~/.config/containers/registries.conf`:
+You'll also need to mark the registry as insecure, with this in `~/.config/containers/registries.conf.d/helm.conf`:
 
 ```toml
 [[registry]]

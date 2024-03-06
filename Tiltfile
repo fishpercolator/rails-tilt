@@ -17,7 +17,8 @@ helm_resource(
       '--set=image.tag=16',
       '--set=global.postgresql.auth.existingSecret=tiltfile',
   ],
-  labels=['database']
+  labels=['database'],
+  resource_deps=['bitnami'],
 )
 
 # The Rails app itself is built and served by app.yaml
