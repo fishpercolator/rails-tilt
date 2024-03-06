@@ -59,3 +59,8 @@ host$ curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/
 host$ tilt up
 ```
 
+# Get a Rails console
+
+```
+host$ ./bin/tilt-run rails c
+```
