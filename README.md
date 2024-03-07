@@ -31,7 +31,7 @@ export PATH="$HOME/go/bin:$PATH"
 
 I added [kind-with-registry.sh](scripts/kind-with-registry.sh) to my `~/.local/bin` and ran it.
 
-You'll also need to mark the registry as insecure, with this in `~/.config/containers/registries.conf.d/helm.conf`:
+You'll also need to mark the registry as insecure, with this in `~/.config/containers/registries.conf.d/kind.conf`:
 
 ```toml
 [[registry]]
